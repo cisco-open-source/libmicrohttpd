@@ -1,0 +1,8 @@
+@@ -28,6 +28,7 @@
+   alstructures.c alstructures.h 
+ 
+ 
++libmicrospdy_la_LIBADD = -lssl -lcrypto -lz
+ libmicrospdy_la_LDFLAGS = \
+   $(SPDY_LIB_LDFLAGS) 
+ 
