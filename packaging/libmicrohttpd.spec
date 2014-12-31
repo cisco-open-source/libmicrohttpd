@@ -15,7 +15,6 @@ BuildRequires:  libgcrypt-devel
 BuildRequires:  libtool
 BuildRequires:  openssl-devel
 BuildRequires:  texinfo
-#BuildRoot:     %{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 GNU libmicrohttpd is a small C library that is supposed to make it
@@ -59,14 +58,8 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post   -p /usr/sbin/ldconfig
-%postun -p /usr/sbin/ldconfig
-
-%post   devel -p /usr/sbin/postshell
--/usr/sbin/fix-info-dir -c %{_infodir}
-
-%postun devel -p /usr/sbin/postshell
--/usr/sbin/fix-info-dir -c %{_infodir}
+%post   -p /sbin/ldconfig
+%postun -p /sbin/ldconfig
 
 %files
 %defattr(-,root,root)
